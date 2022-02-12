@@ -15,6 +15,8 @@ namespace WindowsFormsMusic1
     {
         private WaveOutEvent outputDevice;
         private AudioFileReader audioFile;
+        private string inputFilePath;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,10 +44,10 @@ namespace WindowsFormsMusic1
             audioFile = null;
             GC.Collect();
         }
-
+       
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-          //  openFD.Filter = *.mp3 | *.mp3;
+            //openFD.Filter = *.mp3 | *.mp3;
             if (openFD.ShowDialog() == DialogResult.OK)
             {
 
@@ -70,6 +72,10 @@ namespace WindowsFormsMusic1
             outputDevice?.Stop();
         }
 
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
 
 
     }
