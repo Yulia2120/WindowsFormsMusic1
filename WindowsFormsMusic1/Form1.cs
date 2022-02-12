@@ -17,9 +17,26 @@ namespace WindowsFormsMusic1
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonPlay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+          //  openFD.Filter = *.mp3 | *.mp3;
+            if (openFD.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            if (saveFD.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }
