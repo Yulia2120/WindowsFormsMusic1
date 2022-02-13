@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.saveFD = new System.Windows.Forms.SaveFileDialog();
@@ -45,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelVolume100 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -76,6 +78,7 @@
             this.buttonPrev.TabIndex = 5;
             this.buttonPrev.Text = "Previous";
             this.buttonPrev.UseVisualStyleBackColor = true;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
             // buttonNext
             // 
@@ -87,6 +90,7 @@
             this.buttonNext.TabIndex = 5;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPlay
             // 
@@ -98,6 +102,7 @@
             this.buttonPlay.TabIndex = 5;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // buttonStop
             // 
@@ -147,7 +152,7 @@
             this.pictureBoxArt.Image = global::WindowsFormsMusic1.Properties.Resources.music_disc;
             this.pictureBoxArt.Location = new System.Drawing.Point(12, 93);
             this.pictureBoxArt.Name = "pictureBoxArt";
-            this.pictureBoxArt.Size = new System.Drawing.Size(198, 160);
+            this.pictureBoxArt.Size = new System.Drawing.Size(198, 156);
             this.pictureBoxArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxArt.TabIndex = 7;
             this.pictureBoxArt.TabStop = false;
@@ -202,12 +207,18 @@
             this.panel1.Size = new System.Drawing.Size(634, 186);
             this.panel1.TabIndex = 11;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(634, 341);
+            this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.labelVolume100);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
@@ -216,7 +227,6 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonPause);
-            this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrev);
@@ -251,6 +261,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelVolume100;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
