@@ -39,12 +39,12 @@
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pBar = new System.Windows.Forms.ProgressBar();
             this.pictureBoxArt = new System.Windows.Forms.PictureBox();
             this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelVolume100 = new System.Windows.Forms.Label();
+            this.labelVol100 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
@@ -140,12 +140,12 @@
             this.buttonPause.UseVisualStyleBackColor = true;
             this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
             // 
-            // progressBar1
+            // pBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 283);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(609, 10);
-            this.progressBar1.TabIndex = 6;
+            this.pBar.Location = new System.Drawing.Point(12, 283);
+            this.pBar.Name = "pBar";
+            this.pBar.Size = new System.Drawing.Size(609, 10);
+            this.pBar.TabIndex = 6;
             // 
             // pictureBoxArt
             // 
@@ -171,11 +171,13 @@
             this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
             this.trackBar1.Location = new System.Drawing.Point(589, 113);
+            this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar1.Size = new System.Drawing.Size(45, 120);
             this.trackBar1.TabIndex = 9;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label1
             // 
@@ -188,16 +190,16 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Volume";
             // 
-            // labelVolume100
+            // labelVol100
             // 
-            this.labelVolume100.AutoSize = true;
-            this.labelVolume100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
-            this.labelVolume100.ForeColor = System.Drawing.Color.White;
-            this.labelVolume100.Location = new System.Drawing.Point(583, 93);
-            this.labelVolume100.Name = "labelVolume100";
-            this.labelVolume100.Size = new System.Drawing.Size(33, 13);
-            this.labelVolume100.TabIndex = 10;
-            this.labelVolume100.Text = "100%";
+            this.labelVol100.AutoSize = true;
+            this.labelVol100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
+            this.labelVol100.ForeColor = System.Drawing.Color.White;
+            this.labelVol100.Location = new System.Drawing.Point(583, 93);
+            this.labelVol100.Name = "labelVol100";
+            this.labelVol100.Size = new System.Drawing.Size(33, 13);
+            this.labelVol100.TabIndex = 10;
+            this.labelVol100.Text = "100%";
             // 
             // panel1
             // 
@@ -219,12 +221,12 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(634, 341);
             this.Controls.Add(this.buttonStop);
-            this.Controls.Add(this.labelVolume100);
+            this.Controls.Add(this.labelVol100);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.Player);
             this.Controls.Add(this.pictureBoxArt);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pBar);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonPlay);
@@ -254,12 +256,12 @@
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Button buttonPause;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pBar;
         private System.Windows.Forms.PictureBox pictureBoxArt;
         private AxWMPLib.AxWindowsMediaPlayer Player;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelVolume100;
+        private System.Windows.Forms.Label labelVol100;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
     }

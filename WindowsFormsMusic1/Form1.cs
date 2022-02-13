@@ -16,6 +16,7 @@ namespace WindowsFormsMusic1
         public Form1()
         {
             InitializeComponent();
+            trackBar1.Value = 50;
         }
         //выбрать песню из треклиста
         private void TrackList_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +58,17 @@ namespace WindowsFormsMusic1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(Player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                pBar.Maximum = (int)Player.Ctlcontrols.currentItem.duration;
+                pBar.Value = (int)Player.Ctlcontrols.currentPosition;
+            }
+        }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Player.settings.volume = trackBar1.Value;
+            labelVol100.Text = trackBar1.Value.ToString() + " %";
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
