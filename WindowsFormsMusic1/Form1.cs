@@ -17,6 +17,7 @@ namespace WindowsFormsMusic1
         {
             InitializeComponent();
             trackBar1.Value = 50;
+            labelVol100.Text = "50%";
         }
         //выбрать песню из треклиста
         private void TrackList_SelectedIndexChanged(object sender, EventArgs e)
