@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 
 namespace WindowsFormsMusic1
 {
@@ -79,9 +81,9 @@ namespace WindowsFormsMusic1
             openFD.Filter = "MP3|*.mp3";
             if(openFD.ShowDialog() == DialogResult.OK)
             {
-                
                 files = openFD.FileNames;
                 paths = openFD.FileNames;
+                //files = Name.Replace();
                 for(int i = 0; i < files.Length; i++)
                 {
                     index++;
