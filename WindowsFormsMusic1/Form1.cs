@@ -6,12 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsMusic1
 {
     public partial class Form1 : Form
     {
-        string[] paths, files;
+        public class MediaFile
+        {
+            public string FileName { get; set; }
+            public string Path { get; set; }
+        }
+        //string[] paths, files;
 
         public Form1()
         {
@@ -22,8 +28,12 @@ namespace WindowsFormsMusic1
         //выбрать песню из треклиста
         private void TrackList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Player.URL = paths[TrackList.SelectedIndex];
-            Player.Ctlcontrols.play();
+            MediaFile file = TrackList.SelectedItem as MediaFile;
+            if (file != null)
+            {
+                Player.URL = file.Path;
+                Player.Ctlcontrols.play();
+            }
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -74,21 +84,33 @@ namespace WindowsFormsMusic1
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            var index = 0;
-            openFD.Multiselect = true;
-            openFD.Filter = "MP3|*.mp3";
-            if(openFD.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog openFD = new OpenFileDialog() { Multiselect = true, ValidateNames = true, Filter = "MP3|*.mp3" }) 
             {
-                
-                files = openFD.FileNames;
-                paths = openFD.FileNames;
-                for(int i = 0; i < files.Length; i++)
+                var index = 0;
+                openFD.Multiselect = true;
+                openFD.Filter = "MP3|*.mp3";
+                if (openFD.ShowDialog() == DialogResult.OK)
                 {
-                    index++;
-                    TrackList.Items.Add(index  + files[i]);
-                   
+                    List<MediaFile> files = new List<MediaFile>();
+                    foreach (string fileName in openFD.FileNames)
+                    {
+                        index++;
+                        FileInfo fi = new FileInfo(fileName);
+                        files.Add(new MediaFile(){FileName = Path.GetFileName(fi.FullName),Path = fi.FullName});
+                    }
+                    TrackList.DataSource = files;
+                    TrackList.ValueMember = "Path";
+                    TrackList.DisplayMember = "FileName";
+                    //files = openFD.FileNames;
+                    //paths = openFD.FileNames;
+                    //for(int i = 0; i < files.Length; i++)
+                    //{
+                    //    index++;
+                    //    TrackList.Items.Add(index   + files[i]);
+
                 }
             }
+            
         }
 
 
