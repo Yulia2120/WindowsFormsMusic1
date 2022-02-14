@@ -98,15 +98,11 @@ namespace WindowsFormsMusic1
                         FileInfo fi = new FileInfo(fileName);
                         files.Add(new MediaFile(){FileName = Path.GetFileName(fi.FullName),Path = fi.FullName});
                     }
+                    
                     TrackList.DataSource = files;
                     TrackList.ValueMember = "Path";
                     TrackList.DisplayMember = "FileName";
-                    //files = openFD.FileNames;
-                    //paths = openFD.FileNames;
-                    //for(int i = 0; i < files.Length; i++)
-                    //{
-                    //    index++;
-                    //    TrackList.Items.Add(index   + files[i]);
+                
 
                 }
             }
