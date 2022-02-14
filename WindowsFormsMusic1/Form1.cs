@@ -76,6 +76,7 @@ namespace WindowsFormsMusic1
         {
             var index = 0;
             openFD.Multiselect = true;
+            openFD.Filter = "MP3|*.mp3";
             if(openFD.ShowDialog() == DialogResult.OK)
             {
                 
