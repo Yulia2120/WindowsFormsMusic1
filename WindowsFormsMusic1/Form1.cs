@@ -16,6 +16,8 @@ namespace WindowsFormsMusic1
         {
             public string FileName { get; set; }
             public string Path { get; set; }
+
+           
         }
         //string[] paths, files;
 
@@ -94,11 +96,10 @@ namespace WindowsFormsMusic1
                     List<MediaFile> files = new List<MediaFile>();
                     foreach (string fileName in openFD.FileNames)
                     {
-                      
+
                         FileInfo fi = new FileInfo(fileName);
-                        index++;
-                        files.Add(new MediaFile() { FileName = Path.GetFileName(fi.FullName), Path = fi.FullName});
-                       
+                        files.Add(new MediaFile() { FileName = Path.GetFileName(fi.FullName), Path = fi.FullName });
+                        
                     }
                     
                     TrackList.DataSource = files;
