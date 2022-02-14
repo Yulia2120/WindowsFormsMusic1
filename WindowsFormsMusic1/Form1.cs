@@ -76,7 +76,6 @@ namespace WindowsFormsMusic1
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            var index = 0;
             openFD.Multiselect = true;
             openFD.Filter = "MP3|*.mp3";
             if(openFD.ShowDialog() == DialogResult.OK)
@@ -84,12 +83,11 @@ namespace WindowsFormsMusic1
                 files = openFD.FileNames;
                 paths = openFD.FileNames;
                 //files = Name.Replace();
-                for(int i = 0; i < files.Length; i++)
+                for (int i = 0; i < files.Length; i++)
                 {
-                    index++;
-                    TrackList.Items.Add(index  + files[i]);
-                   
+                   TrackList.Items.Add((i + 1).ToString() + " - " + files[i]);
                 }
+               
             }
         }
 
