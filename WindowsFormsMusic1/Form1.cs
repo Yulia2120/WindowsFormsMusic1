@@ -80,9 +80,8 @@ namespace WindowsFormsMusic1
             openFD.Filter = "MP3|*.mp3";
             if(openFD.ShowDialog() == DialogResult.OK)
             {
-                files = openFD.FileNames;
+                files = openFD.SafeFileNames;
                 paths = openFD.FileNames;
-                //files = Name.Replace();
                 for (int i = 0; i < files.Length; i++)
                 {
                    TrackList.Items.Add((i + 1).ToString() + " - " + files[i]);
