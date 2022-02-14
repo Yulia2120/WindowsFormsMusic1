@@ -62,7 +62,7 @@
             this.TrackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TrackList.ForeColor = System.Drawing.Color.White;
             this.TrackList.FormattingEnabled = true;
-            this.TrackList.Location = new System.Drawing.Point(216, 93);
+            this.TrackList.Location = new System.Drawing.Point(216, 100);
             this.TrackList.Name = "TrackList";
             this.TrackList.Size = new System.Drawing.Size(355, 156);
             this.TrackList.TabIndex = 4;
@@ -150,7 +150,7 @@
             // pictureBoxArt
             // 
             this.pictureBoxArt.Image = global::WindowsFormsMusic1.Properties.Resources.music_disc;
-            this.pictureBoxArt.Location = new System.Drawing.Point(12, 93);
+            this.pictureBoxArt.Location = new System.Drawing.Point(12, 100);
             this.pictureBoxArt.Name = "pictureBoxArt";
             this.pictureBoxArt.Size = new System.Drawing.Size(198, 156);
             this.pictureBoxArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -170,7 +170,7 @@
             // 
             this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.trackBar1.Location = new System.Drawing.Point(589, 113);
+            this.trackBar1.Location = new System.Drawing.Point(589, 120);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -184,7 +184,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(579, 240);
+            this.label1.Location = new System.Drawing.Point(579, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 10;
@@ -195,7 +195,7 @@
             this.labelVol100.AutoSize = true;
             this.labelVol100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
             this.labelVol100.ForeColor = System.Drawing.Color.White;
-            this.labelVol100.Location = new System.Drawing.Point(583, 93);
+            this.labelVol100.Location = new System.Drawing.Point(583, 100);
             this.labelVol100.Name = "labelVol100";
             this.labelVol100.Size = new System.Drawing.Size(33, 13);
             this.labelVol100.TabIndex = 10;
@@ -204,7 +204,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
-            this.panel1.Location = new System.Drawing.Point(0, 80);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(634, 186);
             this.panel1.TabIndex = 11;
