@@ -235,6 +235,8 @@
             this.Controls.Add(this.TrackList);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximumSize = new System.Drawing.Size(650, 380);
+            this.MinimumSize = new System.Drawing.Size(650, 380);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player";
