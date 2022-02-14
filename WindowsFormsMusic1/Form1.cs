@@ -94,9 +94,11 @@ namespace WindowsFormsMusic1
                     List<MediaFile> files = new List<MediaFile>();
                     foreach (string fileName in openFD.FileNames)
                     {
-                        index++;
+                      
                         FileInfo fi = new FileInfo(fileName);
-                        files.Add(new MediaFile(){FileName = Path.GetFileName(fi.FullName),Path = fi.FullName});
+                        index++;
+                        files.Add(new MediaFile() { FileName = Path.GetFileName(fi.FullName), Path = fi.FullName});
+                       
                     }
                     
                     TrackList.DataSource = files;
