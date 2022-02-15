@@ -81,7 +81,7 @@ namespace WindowsFormsMusic1
                     this.Refresh();
                 }
             
-            MessageBox.Show("Saved");
+            MessageBox.Show("  Saved");
             Save.Close();
             FavoritList.Items.Clear();
 

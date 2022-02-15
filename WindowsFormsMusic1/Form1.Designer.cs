@@ -37,7 +37,6 @@
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.pBar = new System.Windows.Forms.ProgressBar();
-            this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.labelVol100 = new System.Windows.Forms.Label();
@@ -52,10 +51,11 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.pictureBoxArt = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
+            this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.SuspendLayout();
             // 
             // TrackList
@@ -137,18 +137,9 @@
             // 
             this.pBar.Location = new System.Drawing.Point(73, 283);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(498, 10);
+            this.pBar.Size = new System.Drawing.Size(545, 10);
             this.pBar.TabIndex = 6;
             this.pBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBar_MouseDown);
-            // 
-            // Player
-            // 
-            this.Player.Enabled = true;
-            this.Player.Location = new System.Drawing.Point(0, 0);
-            this.Player.Name = "Player";
-            this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
-            this.Player.Size = new System.Drawing.Size(634, 66);
-            this.Player.TabIndex = 8;
             // 
             // trackBar1
             // 
@@ -305,6 +296,15 @@
             this.pictureBoxArt.TabIndex = 7;
             this.pictureBoxArt.TabStop = false;
             // 
+            // Player
+            // 
+            this.Player.Enabled = true;
+            this.Player.Location = new System.Drawing.Point(0, 0);
+            this.Player.Name = "Player";
+            this.Player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Player.OcxState")));
+            this.Player.Size = new System.Drawing.Size(634, 66);
+            this.Player.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,11 +334,11 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player";
-            ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
