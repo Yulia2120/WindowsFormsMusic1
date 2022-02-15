@@ -26,6 +26,7 @@ namespace WindowsFormsMusic1
         {
             Player.URL = paths[TrackList.SelectedIndex];
             Player.Ctlcontrols.play();
+            
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -66,12 +67,21 @@ namespace WindowsFormsMusic1
                 pBar.Maximum = (int)Player.Ctlcontrols.currentItem.duration;
                 pBar.Value = (int)Player.Ctlcontrols.currentPosition;
             }
+           
+                labelStartTrack.Text = Player.Ctlcontrols.currentPositionString;
+                //labelEndTrack.Text = Player.Ctlcontrols.currentItem.durationString.ToString();
+           
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             Player.settings.volume = trackBar1.Value;
             labelVol100.Text = trackBar1.Value.ToString() + " %";
+        }
+
+        private void pBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            Player.Ctlcontrols.currentPosition = Player.currentMedia.duration * e.X / pBar.Width;
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)

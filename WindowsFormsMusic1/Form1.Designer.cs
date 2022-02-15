@@ -47,6 +47,8 @@
             this.labelVol100 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelStartTrack = new System.Windows.Forms.Label();
+            this.labelEndTrack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -58,6 +60,7 @@
             // 
             // TrackList
             // 
+            this.TrackList.AllowDrop = true;
             this.TrackList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(76)))));
             this.TrackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TrackList.ForeColor = System.Drawing.Color.White;
@@ -142,10 +145,11 @@
             // 
             // pBar
             // 
-            this.pBar.Location = new System.Drawing.Point(12, 283);
+            this.pBar.Location = new System.Drawing.Point(73, 283);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(609, 10);
+            this.pBar.Size = new System.Drawing.Size(488, 10);
             this.pBar.TabIndex = 6;
+            this.pBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBar_MouseDown);
             // 
             // pictureBoxArt
             // 
@@ -214,12 +218,36 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelStartTrack
+            // 
+            this.labelStartTrack.AutoSize = true;
+            this.labelStartTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelStartTrack.ForeColor = System.Drawing.Color.White;
+            this.labelStartTrack.Location = new System.Drawing.Point(12, 283);
+            this.labelStartTrack.Name = "labelStartTrack";
+            this.labelStartTrack.Size = new System.Drawing.Size(44, 16);
+            this.labelStartTrack.TabIndex = 12;
+            this.labelStartTrack.Text = "00:00";
+            // 
+            // labelEndTrack
+            // 
+            this.labelEndTrack.AutoSize = true;
+            this.labelEndTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelEndTrack.ForeColor = System.Drawing.Color.White;
+            this.labelEndTrack.Location = new System.Drawing.Point(577, 283);
+            this.labelEndTrack.Name = "labelEndTrack";
+            this.labelEndTrack.Size = new System.Drawing.Size(44, 16);
+            this.labelEndTrack.TabIndex = 12;
+            this.labelEndTrack.Text = "00:00";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(634, 341);
+            this.Controls.Add(this.labelEndTrack);
+            this.Controls.Add(this.labelStartTrack);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.labelVol100);
             this.Controls.Add(this.label1);
@@ -234,7 +262,7 @@
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.TrackList);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(650, 380);
             this.MinimumSize = new System.Drawing.Size(650, 380);
             this.Name = "Form1";
@@ -266,6 +294,8 @@
         private System.Windows.Forms.Label labelVol100;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelStartTrack;
+        private System.Windows.Forms.Label labelEndTrack;
     }
 }
 
