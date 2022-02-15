@@ -40,7 +40,6 @@
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonPause = new System.Windows.Forms.Button();
             this.pBar = new System.Windows.Forms.ProgressBar();
-            this.pictureBoxArt = new System.Windows.Forms.PictureBox();
             this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,9 +48,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelStartTrack = new System.Windows.Forms.Label();
             this.labelEndTrack = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FavoritList = new System.Windows.Forms.ListBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.pictureBoxArt = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
             this.SuspendLayout();
             // 
             // openFD
@@ -63,11 +71,13 @@
             this.TrackList.AllowDrop = true;
             this.TrackList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(76)))));
             this.TrackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TrackList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TrackList.ForeColor = System.Drawing.Color.White;
             this.TrackList.FormattingEnabled = true;
-            this.TrackList.Location = new System.Drawing.Point(216, 100);
+            this.TrackList.ItemHeight = 15;
+            this.TrackList.Location = new System.Drawing.Point(216, 109);
             this.TrackList.Name = "TrackList";
-            this.TrackList.Size = new System.Drawing.Size(355, 156);
+            this.TrackList.Size = new System.Drawing.Size(355, 150);
             this.TrackList.TabIndex = 4;
             this.TrackList.SelectedIndexChanged += new System.EventHandler(this.TrackList_SelectedIndexChanged);
             // 
@@ -151,16 +161,6 @@
             this.pBar.TabIndex = 6;
             this.pBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBar_MouseDown);
             // 
-            // pictureBoxArt
-            // 
-            this.pictureBoxArt.Image = global::WindowsFormsMusic1.Properties.Resources.music_disc;
-            this.pictureBoxArt.Location = new System.Drawing.Point(12, 100);
-            this.pictureBoxArt.Name = "pictureBoxArt";
-            this.pictureBoxArt.Size = new System.Drawing.Size(198, 156);
-            this.pictureBoxArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxArt.TabIndex = 7;
-            this.pictureBoxArt.TabStop = false;
-            // 
             // Player
             // 
             this.Player.Enabled = true;
@@ -208,7 +208,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
-            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Location = new System.Drawing.Point(0, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(634, 186);
             this.panel1.TabIndex = 11;
@@ -240,12 +240,109 @@
             this.labelEndTrack.TabIndex = 12;
             this.labelEndTrack.Text = "00:00";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.FavoritList);
+            this.panel2.Location = new System.Drawing.Point(0, 347);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(634, 186);
+            this.panel2.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(76)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(216, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(355, 14);
+            this.textBox1.TabIndex = 5;
+            // 
+            // FavoritList
+            // 
+            this.FavoritList.AllowDrop = true;
+            this.FavoritList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FavoritList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(76)))));
+            this.FavoritList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FavoritList.ForeColor = System.Drawing.Color.White;
+            this.FavoritList.FormattingEnabled = true;
+            this.FavoritList.Location = new System.Drawing.Point(12, 42);
+            this.FavoritList.Name = "FavoritList";
+            this.FavoritList.Size = new System.Drawing.Size(559, 130);
+            this.FavoritList.TabIndex = 4;
+            this.FavoritList.SelectedIndexChanged += new System.EventHandler(this.TrackList_SelectedIndexChanged);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Location = new System.Drawing.Point(205, 548);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(99, 27);
+            this.buttonAdd.TabIndex = 5;
+            this.buttonAdd.Text = "Add to Favorite";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(310, 548);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(99, 27);
+            this.buttonSave.TabIndex = 5;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(415, 548);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(99, 27);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoad.ForeColor = System.Drawing.Color.White;
+            this.buttonLoad.Location = new System.Drawing.Point(520, 548);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(99, 27);
+            this.buttonLoad.TabIndex = 5;
+            this.buttonLoad.Text = "Load";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonPrev_Click);
+            // 
+            // pictureBoxArt
+            // 
+            this.pictureBoxArt.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxArt.Image = global::WindowsFormsMusic1.Properties.Resources.music_disc;
+            this.pictureBoxArt.Location = new System.Drawing.Point(12, 109);
+            this.pictureBoxArt.Name = "pictureBoxArt";
+            this.pictureBoxArt.Size = new System.Drawing.Size(198, 150);
+            this.pictureBoxArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxArt.TabIndex = 7;
+            this.pictureBoxArt.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(634, 341);
+            this.ClientSize = new System.Drawing.Size(634, 590);
+            this.Controls.Add(this.pictureBoxArt);
             this.Controls.Add(this.labelEndTrack);
             this.Controls.Add(this.labelStartTrack);
             this.Controls.Add(this.buttonStop);
@@ -253,24 +350,28 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.Player);
-            this.Controls.Add(this.pictureBoxArt);
             this.Controls.Add(this.pBar);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.TrackList);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximumSize = new System.Drawing.Size(650, 380);
-            this.MinimumSize = new System.Drawing.Size(650, 380);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +397,13 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelStartTrack;
         private System.Windows.Forms.Label labelEndTrack;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox FavoritList;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

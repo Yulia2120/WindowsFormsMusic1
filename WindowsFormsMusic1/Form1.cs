@@ -25,6 +25,8 @@ namespace WindowsFormsMusic1
         private void TrackList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Player.URL = paths[TrackList.SelectedIndex];
+            textBox1.Text = TrackList.Text;
+            buttonAdd.Enabled = true;
             Player.Ctlcontrols.play();
             
         }
@@ -59,7 +61,29 @@ namespace WindowsFormsMusic1
                 TrackList.SelectedIndex = TrackList.SelectedIndex - 1;
             }
         }
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            buttonAdd.Enabled = false;
+            FavoritList.Items.Add(textBox1.Text);
+        }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            StreamWriter Save = new StreamWriter (@"D:\Desktop\Git\WindowsFormsMusic1\WindowsFormsMusic1\Save_favorite\favorite.txt");
+            foreach(var item in FavoritList.Items)
+            {
+                Save.WriteLine(item.ToString());
+                this.Refresh();
+            }
+            MessageBox.Show("Saved");
+            Save.Close();
+            FavoritList.Items.Clear();
+
+        }
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             if(Player.playState == WMPLib.WMPPlayState.wmppsPlaying)
