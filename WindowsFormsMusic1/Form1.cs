@@ -16,7 +16,7 @@ namespace WindowsFormsMusic1
         
         OpenFileDialog dialog = new OpenFileDialog();
         List<string> str = new List<string>();
-
+       
         public Form1()
         {
             InitializeComponent();
@@ -72,12 +72,15 @@ namespace WindowsFormsMusic1
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            StreamWriter Save = new StreamWriter (@"D:\Desktop\Git\WindowsFormsMusic1\WindowsFormsMusic1\Save_favorite\favorite.txt");
-            foreach(var item in FavoritList.Items)
-            {
+            
+            StreamWriter Save = new StreamWriter(@"D:\Desktop\Git\WindowsFormsMusic1\WindowsFormsMusic1\Save_favorite\favorite.txt");
+        
+            foreach (var item in FavoritList.Items)
+                {
                 Save.WriteLine(item.ToString());
-                this.Refresh();
-            }
+                    this.Refresh();
+                }
+            
             MessageBox.Show("Saved");
             Save.Close();
             FavoritList.Items.Clear();
@@ -92,6 +95,7 @@ namespace WindowsFormsMusic1
         }
         private void buttonLoad_Click(object sender, EventArgs e)
         {
+
             using (StreamReader reader = new StreamReader(@"D:\Desktop\Git\WindowsFormsMusic1\WindowsFormsMusic1\Save_favorite\favorite.txt"))
             {
                 string line;
@@ -109,8 +113,7 @@ namespace WindowsFormsMusic1
                 pBar.Value = (int)Player.Ctlcontrols.currentPosition;
             }
            
-                labelStartTrack.Text = Player.Ctlcontrols.currentPositionString;
-               
+                labelStartTrack.Text = Player.Ctlcontrols.currentPositionString;   
            
         }
 
@@ -130,7 +133,8 @@ namespace WindowsFormsMusic1
             dialog.Multiselect = true;
             dialog.Filter = "MP3|*.mp3";
             if (dialog.ShowDialog() == DialogResult.Cancel) return;
-            foreach(string s in dialog.SafeFileNames)
+         
+            foreach (string s in dialog.SafeFileNames)
             {
                 TrackList.Items.Add(Path.GetFileName(s));
                 str.Add(s);
