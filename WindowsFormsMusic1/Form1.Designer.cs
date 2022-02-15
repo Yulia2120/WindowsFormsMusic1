@@ -30,15 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.openFD = new System.Windows.Forms.OpenFileDialog();
-            this.saveFD = new System.Windows.Forms.SaveFileDialog();
             this.TrackList = new System.Windows.Forms.ListBox();
             this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
-            this.buttonPause = new System.Windows.Forms.Button();
             this.pBar = new System.Windows.Forms.ProgressBar();
             this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
@@ -47,7 +44,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelStartTrack = new System.Windows.Forms.Label();
-            this.labelEndTrack = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.FavoritList = new System.Windows.Forms.ListBox();
@@ -61,10 +57,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArt)).BeginInit();
             this.SuspendLayout();
-            // 
-            // openFD
-            // 
-            this.openFD.FileName = "openFD";
             // 
             // TrackList
             // 
@@ -85,7 +77,7 @@
             // 
             this.buttonPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrev.ForeColor = System.Drawing.Color.White;
-            this.buttonPrev.Location = new System.Drawing.Point(12, 306);
+            this.buttonPrev.Location = new System.Drawing.Point(103, 306);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(99, 27);
             this.buttonPrev.TabIndex = 5;
@@ -97,7 +89,7 @@
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(114, 306);
+            this.buttonNext.Location = new System.Drawing.Point(207, 306);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(99, 27);
             this.buttonNext.TabIndex = 5;
@@ -109,7 +101,7 @@
             // 
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.ForeColor = System.Drawing.Color.White;
-            this.buttonPlay.Location = new System.Drawing.Point(216, 306);
+            this.buttonPlay.Location = new System.Drawing.Point(311, 306);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(99, 27);
             this.buttonPlay.TabIndex = 5;
@@ -121,7 +113,7 @@
             // 
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStop.ForeColor = System.Drawing.Color.White;
-            this.buttonStop.Location = new System.Drawing.Point(420, 306);
+            this.buttonStop.Location = new System.Drawing.Point(415, 306);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(99, 27);
             this.buttonStop.TabIndex = 5;
@@ -133,7 +125,7 @@
             // 
             this.buttonOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpen.ForeColor = System.Drawing.Color.White;
-            this.buttonOpen.Location = new System.Drawing.Point(522, 306);
+            this.buttonOpen.Location = new System.Drawing.Point(519, 306);
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(99, 27);
             this.buttonOpen.TabIndex = 5;
@@ -141,23 +133,11 @@
             this.buttonOpen.UseVisualStyleBackColor = true;
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
-            // buttonPause
-            // 
-            this.buttonPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPause.ForeColor = System.Drawing.Color.White;
-            this.buttonPause.Location = new System.Drawing.Point(318, 306);
-            this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(99, 27);
-            this.buttonPause.TabIndex = 5;
-            this.buttonPause.Text = "Pause";
-            this.buttonPause.UseVisualStyleBackColor = true;
-            this.buttonPause.Click += new System.EventHandler(this.buttonPause_Click);
-            // 
             // pBar
             // 
             this.pBar.Location = new System.Drawing.Point(73, 283);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(488, 10);
+            this.pBar.Size = new System.Drawing.Size(498, 10);
             this.pBar.TabIndex = 6;
             this.pBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBar_MouseDown);
             // 
@@ -229,17 +209,6 @@
             this.labelStartTrack.TabIndex = 12;
             this.labelStartTrack.Text = "00:00";
             // 
-            // labelEndTrack
-            // 
-            this.labelEndTrack.AutoSize = true;
-            this.labelEndTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelEndTrack.ForeColor = System.Drawing.Color.White;
-            this.labelEndTrack.Location = new System.Drawing.Point(577, 283);
-            this.labelEndTrack.Name = "labelEndTrack";
-            this.labelEndTrack.Size = new System.Drawing.Size(44, 16);
-            this.labelEndTrack.TabIndex = 12;
-            this.labelEndTrack.Text = "00:00";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(48)))));
@@ -275,7 +244,7 @@
             this.FavoritList.Name = "FavoritList";
             this.FavoritList.Size = new System.Drawing.Size(559, 130);
             this.FavoritList.TabIndex = 4;
-            this.FavoritList.SelectedIndexChanged += new System.EventHandler(this.TrackList_SelectedIndexChanged);
+            this.FavoritList.SelectedIndexChanged += new System.EventHandler(this.FavoritList_SelectedIndexChanged);
             // 
             // buttonAdd
             // 
@@ -323,7 +292,7 @@
             this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.buttonPrev_Click);
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // pictureBoxArt
             // 
@@ -343,7 +312,6 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(634, 590);
             this.Controls.Add(this.pictureBoxArt);
-            this.Controls.Add(this.labelEndTrack);
             this.Controls.Add(this.labelStartTrack);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.labelVol100);
@@ -352,7 +320,6 @@
             this.Controls.Add(this.Player);
             this.Controls.Add(this.pBar);
             this.Controls.Add(this.buttonOpen);
-            this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonLoad);
@@ -378,15 +345,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.OpenFileDialog openFD;
-        private System.Windows.Forms.SaveFileDialog saveFD;
         private System.Windows.Forms.ListBox TrackList;
         private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button buttonOpen;
-        private System.Windows.Forms.Button buttonPause;
         private System.Windows.Forms.ProgressBar pBar;
         private System.Windows.Forms.PictureBox pictureBoxArt;
         private AxWMPLib.AxWindowsMediaPlayer Player;
@@ -396,7 +360,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelStartTrack;
-        private System.Windows.Forms.Label labelEndTrack;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox FavoritList;
         private System.Windows.Forms.Button buttonAdd;
